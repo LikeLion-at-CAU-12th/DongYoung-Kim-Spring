@@ -2,6 +2,7 @@ package com.example.likelion.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,4 +25,12 @@ public class Album {
     private Artist artist;
 
     private LocalDate releaseDate;
+
+    @Builder
+    public Album(String title, String description, Artist artist, LocalDate releaseDate) {
+        this.title = title;
+        this.description = description;
+        this.artist = artist;
+        this.releaseDate = releaseDate;
+    }
 }

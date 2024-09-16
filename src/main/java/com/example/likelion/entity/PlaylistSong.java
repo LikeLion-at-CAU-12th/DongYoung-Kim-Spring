@@ -2,6 +2,7 @@ package com.example.likelion.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,4 +25,10 @@ public class PlaylistSong {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "playlist_id")
     private Playlist playlist;
+
+    @Builder
+    public PlaylistSong(Song song, Playlist playlist) {
+        this.song = song;
+        this.playlist = playlist;
+    }
 }
