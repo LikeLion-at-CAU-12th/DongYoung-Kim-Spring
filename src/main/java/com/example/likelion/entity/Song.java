@@ -2,11 +2,11 @@ package com.example.likelion.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Getter
@@ -26,4 +26,12 @@ public class Song {
     private Album album;
 
     private LocalDate releaseDate;
+
+    @Builder
+    public Song(String title, Artist artist, Album album, LocalDate releaseDate) {
+        this.title = title;
+        this.artist = artist;
+        this.album = album;
+        this.releaseDate = releaseDate;
+    }
 }
