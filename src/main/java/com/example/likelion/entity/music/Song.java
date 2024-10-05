@@ -1,4 +1,4 @@
-package com.example.likelion.entity;
+package com.example.likelion.entity.music;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

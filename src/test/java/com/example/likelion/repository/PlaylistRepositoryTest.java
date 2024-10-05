@@ -1,6 +1,7 @@
 package com.example.likelion.repository;
 
 import com.example.likelion.entity.*;
+import com.example.likelion.entity.music.*;
 import com.example.likelion.exception.CustomException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
