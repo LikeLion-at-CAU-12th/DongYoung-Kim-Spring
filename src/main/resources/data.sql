@@ -1,9 +1,9 @@
 -- Member
-INSERT INTO MEMBER (USERNAME, EMAIL, AGE, CREATED_AT, UPDATED_AT) VALUES
+INSERT INTO member (USERNAME, EMAIL, AGE, CREATED_AT, UPDATED_AT) VALUES
                                                                       ( '푸앙', 'puang@cau.ac.kr', 3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP );
 
 -- Category
-INSERT INTO CATEGORY (NAME) VALUES
+INSERT INTO category (NAME) VALUES
                                 ( '일상' ),
                                 ( '맛집' ),
                                 ( '개발' ),
