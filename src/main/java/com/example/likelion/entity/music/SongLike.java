@@ -1,5 +1,7 @@
-package com.example.likelion.entity;
+package com.example.likelion.entity.music;
 
+import com.example.likelion.entity.BaseTimeEntity;
+import com.example.likelion.entity.Member;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

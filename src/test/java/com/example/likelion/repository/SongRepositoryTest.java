@@ -1,9 +1,8 @@
 package com.example.likelion.repository;
 
-import com.example.likelion.entity.Album;
-import com.example.likelion.entity.Artist;
-import com.example.likelion.entity.Song;
-import com.example.likelion.exception.CustomException;
+import com.example.likelion.entity.music.Album;
+import com.example.likelion.entity.music.Artist;
+import com.example.likelion.entity.music.Song;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.Assertions;
