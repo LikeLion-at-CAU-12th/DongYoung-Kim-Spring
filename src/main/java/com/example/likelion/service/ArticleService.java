@@ -114,8 +114,6 @@ public class ArticleService {
         Article article = articleRepository.findById(articleId)
                 .orElseThrow(() -> new RuntimeException("해당 ID를 가진 글이 없습니다."));
 
-
-        articleLogRepository.deleteAllByArticle(article);
         articleRepository.deleteById(article.getId());
     }
 }
