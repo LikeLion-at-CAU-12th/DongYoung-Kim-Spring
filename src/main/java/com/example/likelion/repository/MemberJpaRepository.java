@@ -8,7 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface MemberJpaRepository extends JpaRepository<Member, Long> {
-    List<Member> findByUsername(String username);
+    Member findByUsername(String username);
+    List<Member> findAllByUsername(String username);
     Page<Member> findByAgeGreaterThanEqual(int age, Pageable pageable);
     Page<Member> findByUsernameStartingWith(String prefix, Pageable pageable);
+    boolean existsByUsername(String username);
 }

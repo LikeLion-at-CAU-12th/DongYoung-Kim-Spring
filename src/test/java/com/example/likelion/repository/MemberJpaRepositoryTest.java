@@ -62,7 +62,7 @@ class MemberJpaRepositoryTest {
 
     @Test
     @Transactional
-    public void testFindByUsername() {
+    public void testFindAllByUsername() {
         Member member = Member.builder()
                 .username("memberA")
                 .email("memberA@naver.com")
@@ -70,7 +70,7 @@ class MemberJpaRepositoryTest {
 
         memberJpaRepository.save(member);
 
-        List<Member> byUsername = memberJpaRepository.findByUsername(member.getUsername());
+        List<Member> byUsername = memberJpaRepository.findAllByUsername(member.getUsername());
 
         for (Member member1 : byUsername) {
             System.out.println(member1.getId());
