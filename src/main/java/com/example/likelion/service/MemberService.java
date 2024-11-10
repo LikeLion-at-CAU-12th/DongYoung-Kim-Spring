@@ -53,6 +53,7 @@ public class MemberService {
         Member member = Member.builder()
                 .username(joinRequest.getUsername())
                 .password(bCryptPasswordEncoder.encode(joinRequest.getPassword()))
+                .email(joinRequest.getEmail())
                 .build();
 
         memberJpaRepository.save(member);

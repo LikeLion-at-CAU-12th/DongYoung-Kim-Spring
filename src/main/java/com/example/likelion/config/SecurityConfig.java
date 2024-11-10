@@ -1,5 +1,6 @@
 package com.example.likelion.config;
 
+import com.example.likelion.service.CustomOAuth2UserService;
 import com.example.likelion.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,7 @@ import java.util.Collections;
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final CustomUserDetailsService customUserDetailsService;
+    private final CustomOAuth2UserService customOAuth2UserService;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -32,6 +34,11 @@ public class SecurityConfig {
                         .requestMatchers("/api/**").authenticated())
                 .formLogin(Customizer.withDefaults())
                 .logout(Customizer.withDefaults())
+                .oauth2Login(oauth -> oauth
+                        .userInfoEndpoint(userInfo -> userInfo
+                                .userService(customOAuth2UserService)
+                        )
+                )
                 .userDetailsService(customUserDetailsService);
 
         return http.build();

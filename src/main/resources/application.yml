@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    include: oauth  # OAuth2 설정 파일 분리
   application:
     name: likelion
   datasource:
