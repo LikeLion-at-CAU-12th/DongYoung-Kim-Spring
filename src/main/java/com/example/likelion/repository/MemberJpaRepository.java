@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MemberJpaRepository extends JpaRepository<Member, Long> {
     Member findByUsername(String username);
@@ -13,4 +14,5 @@ public interface MemberJpaRepository extends JpaRepository<Member, Long> {
     Page<Member> findByAgeGreaterThanEqual(int age, Pageable pageable);
     Page<Member> findByUsernameStartingWith(String prefix, Pageable pageable);
     boolean existsByUsername(String username);
+    Optional<Member> findByEmail(String email);
 }
